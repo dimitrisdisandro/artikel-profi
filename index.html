@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Artikel-Profi</title>
+  <meta name="description" content="Deutsche Artikel üben: der, die, das, ein, eine in allen vier Fällen">
+  <meta name="theme-color" content="#2f5bd8">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="core/core.css">
+</head>
+<body>
+
+<!-- ═══ Profilwahl ═══ -->
+<div id="screen-profile" class="screen active">
+  <div class="wrap">
+    <header class="ph">
+      <div id="app-logo" class="ph-logo" aria-hidden="true"></div>
+      <h1 id="ph-title"></h1>
+      <p id="ph-sub"></p>
+    </header>
+    <div id="profile-list"></div>
+    <div id="profile-form" class="profile-form" style="display:none"></div>
+    <button id="btn-add-profile" class="btn btn-primary btn-block" type="button"></button>
+    <div id="highscore-box"></div>
+    <div id="about-profile" class="about"></div>
+  </div>
+</div>
+
+<!-- ═══ Übung ═══ -->
+<div id="screen-app" class="screen">
+  <div class="wrap">
+    <div class="topbar">
+      <button id="btn-back" class="icon-btn" type="button" aria-label="Zurück">←</button>
+      <div id="app-title" class="topbar-title"></div>
+      <button id="btn-settings" class="icon-btn" type="button" aria-label="Einstellungen">⚙</button>
+    </div>
+
+    <div id="daily-banner"></div>
+    <div id="balance-banner" style="display:none"></div>
+
+    <div id="score-row">
+      <div class="score-card"><div class="score-label" id="lbl-correct">Richtig</div><div class="score-val" id="score-correct">0</div></div>
+      <div class="score-card"><div class="score-label" id="lbl-total">Gesamt</div><div class="score-val" id="score-total">0</div></div>
+      <div class="score-card"><div class="score-label" id="lbl-streak">Serie</div><div class="score-val" id="score-streak">—</div></div>
+    </div>
+
+    <div id="path-row"></div>
+    <div id="mode-tabs"></div>
+    <div id="difficulty-row"><span id="lbl-level" class="level-label"></span></div>
+
+    <div id="task-card">
+      <div id="task-title"></div>
+      <div id="task-sub"></div>
+      <div id="task-body"></div>
+      <div id="feedback" class="fb-neutral" role="status" aria-live="polite"></div>
+      <div id="btn-row"></div>
+    </div>
+
+    <section id="stats-section"></section>
+
+    <section id="badges-section">
+      <div class="section-title" id="lbl-badges"></div>
+      <div id="badges-grid"></div>
+    </section>
+  </div>
+</div>
+
+<!-- ═══ Einstellungen ═══ -->
+<div id="screen-settings" class="screen">
+  <div class="wrap">
+    <div class="topbar">
+      <button id="set-back" class="icon-btn" type="button" aria-label="Zurück">←</button>
+      <div id="set-title" class="topbar-title"></div>
+      <span class="topbar-spacer"></span>
+    </div>
+    <div id="settings-list"></div>
+    <div id="about-settings" class="about"></div>
+  </div>
+</div>
+
+<!-- ═══ Hinweis beim ersten Start ═══ -->
+<div id="disclaimer-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="disclaimer-title">
+  <div class="overlay-box">
+    <h2 id="disclaimer-title"></h2>
+    <p id="disclaimer-text"></p>
+    <button id="disclaimer-btn" class="btn btn-primary btn-block" type="button"></button>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script src="core/dom.js"></script>
+<script src="app/nouns.js"></script>
+<script src="app/grammar.js"></script>
+<script src="app/modes.js"></script>
+<script src="app/config.js"></script>
+<script src="core/core.js"></script>
+<script src="app/main.js"></script>
+</body>
+</html>
